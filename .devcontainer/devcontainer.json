@@ -1,0 +1,28 @@
+{
+    "name": "dwg-read",
+    "build": {
+      "dockerfile": "Dockerfile" // 本机构建镜像
+    },
+    "workspaceFolder": "/root/dwg-read",
+    // "postCreateCommand": "source /root/emsdk/emsdk_env.sh && ln -s /root/third_party /root/dwg-read",
+    "postCreateCommand": "ln -s /root/third_party /workspaces/dwg-read",
+    "customizations": {
+      "vscode": {
+        "extensions": [
+          "ms-vscode.cpptools",
+          "esbenp.prettier-vscode",
+          "ms-azuretools.vscode-docker",
+          "ms-vscode.cpptools-extension-pack",
+          "Vue.volar",
+          "Lokalise.i18n-ally"
+        ]
+      }
+    },
+    "remoteUser": "root",
+    "appPort": [
+      "5178:5178"
+    ],
+    "mounts": [
+      "source=D:\\codes\\dwg-read,target=/root/dwg-read,type=bind",
+    ]
+  }
